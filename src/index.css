@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-glass: rgba(255, 255, 255, 0.15);
+  --color-glass-border: rgba(255, 255, 255, 0.3);
+  --color-accent-pink: #ff007a;
+  --font-sans: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#191919] text-white antialiased;
+    background: radial-gradient(circle at top left, #2b1055, #191919, #000000);
+    min-height: 100vh;
+  }
+}
+
+.frosted-glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(25px);
+  border: 1px solid var(--color-glass-border);
+}
+
+.mesh-sphere {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(131, 58, 180, 0.4) 0%, rgba(253, 29, 29, 0.1) 50%, transparent 100%);
+  filter: blur(80px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+}
